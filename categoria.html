@@ -8,10 +8,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <style>
-  .cat-hero{position:relative;overflow:hidden;background:var(--verde);color:#fff;padding:26px 0 24px}
-  .cat-hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 14px,transparent 14px 34px)}
-  .cat-hero .mascot{position:absolute;right:-30px;top:-20px;height:180px;opacity:.14}
-  .cat-hero .wrap{position:relative}
+  /* topo da categoria: foto real da torcida + degradê verde pro texto ler */
+  .cat-hero{position:relative;overflow:hidden;background:var(--verde-escuro) var(--foto-cat,none) center/cover no-repeat;color:#fff;min-height:220px;display:flex;align-items:flex-end;padding:40px 0 22px}
+  .cat-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,32,20,.2) 0%,rgba(0,32,20,.55) 45%,rgba(0,24,15,.92))}
+  .cat-hero .wrap{position:relative;width:100%}
   .cat-hero .crumb{color:#bfe0cb;padding-top:0}.cat-hero .crumb :last-child{color:#fff}
   .cat-hero h1{font:400 44px/1 var(--display);text-transform:uppercase}
   .cat-hero p{margin-top:6px;opacity:.9;font-size:14.5px;max-width:46ch}
@@ -42,7 +42,8 @@
   .seo h2{font:700 16px var(--ui);color:var(--tinta);margin-bottom:6px}
   .empty-f{grid-column:1/-1;text-align:center;padding:40px 0;color:var(--cinza)}
   @media(min-width:1024px){
-    .cat-hero{padding:40px 0}.cat-hero h1{font-size:72px}.cat-hero .mascot{height:300px;right:8%}
+    .cat-hero{min-height:340px;padding:60px 0 40px}.cat-hero h1{font-size:72px}
+    .cat-hero::before{background:linear-gradient(90deg,rgba(0,24,15,.9) 20%,rgba(0,32,20,.5) 55%,rgba(0,32,20,.15))}
     .subs{max-width:var(--wrap);margin:0 auto;padding:20px 24px 0}
     .toolbar{position:static;border:0}
     .toolbar .btn-filter{display:none}
@@ -57,7 +58,6 @@
 <body>
 
 <section class="cat-hero" data-n="1">
-  <img class="mascot" src="assets/img/mascote-branco.png" alt="">
   <div class="wrap">
     <nav class="crumb"><a href="index.html">Início</a><span>/</span><span id="crumbCat"></span></nav>
     <h1 id="catTitle"></h1>
@@ -133,6 +133,13 @@ const titulo = subNome || titulo0;
 document.title = titulo + ' · Loja Mancha Alvi Verde';
 document.getElementById('catTitle').textContent = titulo;
 document.getElementById('crumbCat').innerHTML = subNome ? `<a href="categoria.html?c=${c}">${titulo0}</a><span> / </span><span>${subNome}</span>` : titulo0;
+// foto de fundo do topo: uma por categoria (subcategoria usa a da categoria-mãe)
+const FOTO = {
+  todas:'50% 70%', 'linha-tradicional':'50% 50%', masculino:'50% 35%', feminino:'60% 85%', infantil:'50% 25%',
+  bones:'70% 15%', acessorios:'30% 45%', calcados:'50% 40%', souvenirs:'50% 55%',
+};
+const hero = document.querySelector('.cat-hero');
+if (FOTO[c]) { hero.style.setProperty('--foto-cat', `url('assets/img/torcida/cat-${c}.jpg')`); hero.style.backgroundPosition = FOTO[c]; }
 document.getElementById('catSub').textContent = subNome ? `${subNome} da Mancha. ${desc}` : desc;
 document.getElementById('seoH').textContent = titulo + ' da Mancha Alvi Verde';
 document.getElementById('seoP').innerHTML = `Na loja oficial da Mancha Alvi Verde tem ${titulo.toLowerCase()} com os símbolos da torcida, entrega pra todo o Brasil em até 2 dias úteis e 5% OFF no Pix. <span class="tbd">Texto de SEO de exemplo: um por categoria.</span>`;

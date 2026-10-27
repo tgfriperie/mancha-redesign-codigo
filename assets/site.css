@@ -281,16 +281,6 @@ body.pins .sticky[data-n]::after{top:-10px}
 .insta .slot{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font-size:11px;color:var(--cinza);background:repeating-linear-gradient(135deg,#dfe8e2 0 10px,#e9f0eb 10px 20px);padding:6px}
 @media(min-width:1024px){.insta{grid-template-columns:repeat(6,1fr);gap:8px}}
 
-/* clube / newsletter */
-.club{border-radius:20px;background:var(--verde);color:#fff;padding:26px 20px;position:relative;overflow:hidden}
-.club img{position:absolute;right:-30px;bottom:-30px;height:200px;opacity:.15}
-.club h2{font:400 32px/1 var(--display);text-transform:uppercase;max-width:14ch}
-.club p{margin:10px 0 16px;opacity:.92;max-width:40ch}
-.club form{display:grid;gap:8px;position:relative}
-.club input{height:50px;border-radius:999px;border:0;padding:0 20px;font-size:15px;color:var(--tinta)}
-.club small{display:block;margin-top:10px;font-size:12px;opacity:.75}
-@media(min-width:1024px){.club{padding:48px 56px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.club h2{font-size:48px}.club form{grid-template-columns:1fr 1fr auto}.club img{height:320px;right:40%}}
-
 /* ---------- rodapé ---------- */
 .ftr{background:var(--verde-noite);color:#e6efe9;padding:36px 0 26px}
 .ftr-top{text-align:center}
@@ -412,12 +402,9 @@ body.pins .sticky[data-n]::after{top:-10px}
 .hero-video video.bn-photo{width:100%;height:100%;object-fit:cover;object-position:50% 45%;background:#04140c}
 .hero-video .bn-has-photo::before{background:linear-gradient(180deg,rgba(0,32,20,.15) 20%,rgba(0,32,20,.55) 50%,rgba(0,24,15,.95))}
 .hero-video .bn-t{font-size:48px}
-.hero-pause{position:absolute;right:14px;top:14px;z-index:3;width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.35);color:#fff;display:grid;place-items:center;backdrop-filter:blur(4px)}
-.hero-pause svg{width:18px;height:18px}
 @media(min-width:1024px){
   .hero-video .bn{min-height:640px;padding:0 max(24px,calc((100vw - var(--wrap))/2 + 24px)) 0;justify-content:center}
   .hero-video .bn-t{font-size:104px}
   .hero-video .bn-s{font-size:18px}
   .hero-video .bn-has-photo::before{background:linear-gradient(90deg,rgba(0,24,15,.92) 22%,rgba(0,32,20,.45) 55%,rgba(0,32,20,.1))}
-  .hero-pause{top:auto;bottom:20px;right:max(24px,calc((100vw - var(--wrap))/2 + 24px))}
 }
