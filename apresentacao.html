@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proposta de redesign · Loja Mancha Alvi Verde</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  body{background:#e4eae5}
+  .cover{background:var(--verde-escuro);color:#fff;padding:56px 0 50px;position:relative;overflow:hidden}
+  .cover::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.04) 0 14px,transparent 14px 34px)}
+  .cover .wrap{position:relative}
+  .cover img.m{position:absolute;right:-40px;top:-40px;height:380px;opacity:.12}
+  .cover .k{font:700 13px var(--cond);letter-spacing:.16em;text-transform:uppercase;color:#b7f0c9}
+  .cover h1{font:400 64px/.92 var(--display);text-transform:uppercase;margin:12px 0 16px}
+  .cover p{max-width:56ch;opacity:.9;font-size:16px}
+  .cover nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .cover nav a{height:38px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.12);display:inline-flex;align-items:center;font-weight:600;font-size:14px}
+  .cover nav a:hover{background:rgba(255,255,255,.22)}
+  .page{padding:56px 0;border-bottom:1px solid #cfd8d1}
+  .page-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:24px}
+  .page-h h2{font:400 44px/1 var(--display);text-transform:uppercase;color:var(--verde-escuro)}
+  .page-h .k{font:700 12.5px var(--cond);letter-spacing:.14em;text-transform:uppercase;color:var(--vermelho)}
+  .cmp{display:grid;gap:24px;align-items:start}
+  .col h3{font:700 13px var(--cond);letter-spacing:.14em;text-transform:uppercase;color:var(--cinza);margin-bottom:10px}
+  .col.after h3{color:var(--verde)}
+  .phone{width:300px;height:650px;border-radius:38px;border:9px solid #111814;overflow:hidden;background:#fff;box-shadow:0 24px 60px rgba(0,40,20,.22);margin:0 auto}
+  .phone iframe{width:390px;height:874px;border:0;transform:scale(.7231);transform-origin:0 0}
+  .phone.before{position:relative;overflow-y:auto;scrollbar-width:none}
+  .phone.before img{width:100%;display:block}
+  .notes{list-style:none;counter-reset:n;display:grid;gap:10px;font-size:14.5px}
+  .notes li{counter-increment:n;position:relative;padding-left:36px;line-height:1.4}
+  .notes li::before{content:counter(n);position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:var(--vermelho);color:#fff;font:700 12px/24px var(--ui);text-align:center}
+  .notes li.bad::before{content:"✕";background:#9aa59f}
+  .notes em{font-style:normal;color:var(--cinza);font-size:13px}
+  .desk{margin-top:30px}
+  .desk-frame{border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(0,40,20,.18);background:#fff;height:520px;position:relative}
+  .desk-frame .bar{height:28px;background:#f0f2f0;display:flex;gap:6px;align-items:center;padding:0 12px}
+  .desk-frame .bar i{width:10px;height:10px;border-radius:50%;background:#d3d8d4}
+  .desk-frame iframe{width:1440px;height:1000px;border:0;transform-origin:0 0;position:absolute;left:0;top:28px}
+  .open{margin-top:12px}
+  .banners{display:grid;gap:14px}
+  .banners img{width:100%;border-radius:12px;box-shadow:0 12px 30px rgba(0,40,20,.15)}
+  .banners .m{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .todo{display:grid;gap:10px}
+  .todo li{list-style:none;background:#fff;border-radius:14px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;font-size:14.5px}
+  .todo li b{display:block}
+  .todo li span.tbd{flex:none}
+  @media(min-width:1100px){
+    .cover h1{font-size:110px}
+    .cmp{grid-template-columns:300px 300px 1fr;gap:44px}
+  }
+</style>
+</head>
+<body>
+<header class="cover">
+  <img class="m" src="assets/img/mascote-branco.png" alt="">
+  <div class="wrap">
+    <p class="k">Proposta de redesign · loja oficial</p>
+    <h1>Loja Mancha<br>Alvi Verde</h1>
+    <p>Protótipo navegável do site novo, feito com os produtos, preços e fotos reais da loja atual. Tudo cabe na plataforma Tray: é tema e configuração, não um site novo do zero.</p>
+    <nav>
+      <a href="#home">Home</a><a href="#categoria">Categoria</a><a href="#produto">Produto</a><a href="#carrinho">Carrinho</a><a href="#banners">Banners</a><a href="#pendencias">O que falta</a>
+      <a href="index.html" style="background:#fff;color:var(--verde-escuro)">Abrir o site →</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="page" id="home">
+    <div class="page-h"><div><p class="k">Página 1</p><h2>Home</h2></div><a class="link open" href="index.html?pins=1">Abrir com marcadores</a></div>
+    <div class="cmp">
+      <div class="col"><h3>Hoje</h3><div class="phone before"><img src="../antes/01-home-mobile.jpg" alt="Home atual no celular"></div></div>
+      <div class="col after"><h3>Proposta</h3><div class="phone"><iframe src="index.html?pins=1" loading="lazy" title="Home proposta"></iframe></div></div>
+      <ol class="notes">
+        <li><b>Banners com foto da torcida, mensagem e produto</b>, em vez de foto de celular cortada. Quatro banners prontos (PNG no tamanho da Tray).</li>
+        <li><b>Faixa de garantias:</b> Pix com desconto, envio em 2 dias, troca grátis e compra segura logo abaixo do banner.</li>
+        <li><b>Categorias com foto</b>, um toque para chegar ao produto.</li>
+        <li><b>Mais vendidos só com estoque.</b> Hoje 4 dos 6 destaques aparecem como "Esse acabou :(".</li>
+        <li><b>Banners de campanha</b> para Feminino e Bonés.</li>
+        <li><b>Vitrine da Linha Tradicional</b>, o carro-chefe.</li>
+        <li><b>A história da Mancha</b> na home: o porquê de comprar na loja oficial.</li>
+        <li><b>Instagram da torcida</b> (1 mi de seguidores) puxando para a loja.</li>
+        <li><b>Lista de lançamentos no WhatsApp</b>: pré-venda para quem é da Mancha.</li>
+      </ol>
+    </div>
+    <div class="desk"><div class="desk-frame"><div class="bar"><i></i><i></i><i></i></div><iframe src="index.html" loading="lazy" title="Home desktop" data-scale></iframe></div></div>
+  </section>
+
+  <section class="page" id="categoria">
+    <div class="page-h"><div><p class="k">Página 2</p><h2>Categoria</h2></div><a class="link open" href="categoria.html?c=masculino&pins=1">Abrir com marcadores</a></div>
+    <div class="cmp">
+      <div class="col"><h3>Hoje</h3><div class="phone before"><img src="../antes/02-categoria-mobile.jpg" alt="Categoria atual"></div></div>
+      <div class="col after"><h3>Proposta</h3><div class="phone"><iframe src="categoria.html?c=masculino&pins=1" loading="lazy" title="Categoria proposta"></iframe></div></div>
+      <ol class="notes">
+        <li><b>Topo da categoria</b> com título, descrição curta e o mascote.</li>
+        <li><b>Atalhos de subcategoria</b> (Camisas, Jaquetas, Bermudas…).</li>
+        <li><b>Ordenar por "Mais vendidos"</b> como padrão e contador de produtos; esgotados vão para o fim.</li>
+        <li><b>Filtros que funcionam</b>: tamanho, preço, cor e "só com estoque". Hoje o filtro de cor tem 2 opções para 42 camisas.</li>
+        <li><b>Card com preço no Pix</b> e botão de adicionar rápido, sem estrelas vazias.</li>
+        <li><b>"Você viu 12 de 42"</b> e carregar mais, em vez de paginação.</li>
+        <li><b>Texto de SEO</b> por categoria, que hoje não existe (a descrição é só "Camisas").</li>
+      </ol>
+    </div>
+    <div class="desk"><div class="desk-frame"><div class="bar"><i></i><i></i><i></i></div><iframe src="categoria.html?c=masculino" loading="lazy" title="Categoria desktop" data-scale></iframe></div></div>
+  </section>
+
+  <section class="page" id="produto">
+    <div class="page-h"><div><p class="k">Página 3</p><h2>Produto</h2></div><a class="link open" href="produto.html?pins=1">Abrir com marcadores</a></div>
+    <div class="cmp">
+      <div class="col"><h3>Hoje</h3><div class="phone before"><img src="../antes/03-produto-mobile-topo.jpg" alt="Produto atual"><img src="../antes/04-produto-mobile-tamanhos.jpg" alt=""></div></div>
+      <div class="col after"><h3>Proposta</h3><div class="phone"><iframe src="produto.html?pins=1" loading="lazy" title="Produto proposto"></iframe></div></div>
+      <ol class="notes">
+        <li><b>Caminho real</b> (Início › Masculino), em vez de "Torcida" para tudo.</li>
+        <li><b>Galeria grande</b>, de arrastar, com contador e miniaturas. <em>Pede fotos em maior resolução: as atuais têm ~300 px.</em></li>
+        <li><b>Selo de produto oficial</b> no lugar das 5 estrelas vazias.</li>
+        <li><b>Preço no Pix em destaque</b>, sem expor "com juros · Cartão Visa - Vindi".</li>
+        <li><b>Tamanhos em ordem</b> (PP → G6), esgotados riscados, <b>tabela de medidas</b> e <b>avise-me</b> no WhatsApp.</li>
+        <li><b>Aviso claro</b> quando falta escolher o tamanho.</li>
+        <li><b>Garantias junto do botão.</b></li>
+        <li><b>Kit com desconto</b> para subir o ticket. <em>Valor ilustrativo.</em></li>
+        <li><b>Descrição de verdade</b>: história da peça e ficha técnica.</li>
+        <li><b>Relacionados só com estoque.</b></li>
+        <li><b>Barra fixa de compra</b> quando o botão sai da tela.</li>
+      </ol>
+    </div>
+    <div class="desk"><div class="desk-frame"><div class="bar"><i></i><i></i><i></i></div><iframe src="produto.html" loading="lazy" title="Produto desktop" data-scale></iframe></div></div>
+  </section>
+
+  <section class="page" id="carrinho">
+    <div class="page-h"><div><p class="k">Página 4</p><h2>Carrinho</h2></div></div>
+    <div class="cmp">
+      <div class="col"><h3>Hoje</h3><div class="phone before"><img src="../antes/05-minicarrinho-mobile.jpg" alt="Mini-carrinho atual"></div></div>
+      <div class="col after"><h3>Proposta</h3><div class="phone"><iframe src="produto.html?demo=cart" loading="lazy" title="Carrinho proposto" id="cartFrame"></iframe></div></div>
+      <ol class="notes">
+        <li><b>Barra de frete grátis</b>: "faltam R$ 99" puxa mais um item. <em>Régua de R$ 299 é sugestão.</em></li>
+        <li><b>Quantidade e remover</b> direto na gaveta.</li>
+        <li><b>"Completa o kit"</b> com boné, corrente e bandeirinha.</li>
+        <li><b>Total no Pix</b> em destaque e botão "Finalizar compra".</li>
+        <li class="bad"><b>Checkout da Tray</b>: o visual muda (botão verde-limão). Personalizar cores e logo do checkout.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="page" id="banners">
+    <div class="page-h"><div><p class="k">Peças</p><h2>Banners prontos</h2></div></div>
+    <p style="margin:-10px 0 18px;color:var(--cinza)">Exportados em PNG: desktop 1920×700 e celular 800×1000. Fotos dos posts do @manchaverdetorcida (jogo contra o Bragantino e Corredor Alviverde).</p>
+    <div class="banners">
+      <img src="../banners-png/banner-mancha-desktop-1920x700.png" alt="">
+      <img src="../banners-png/banner-tradicional-desktop-1920x700.png" alt="">
+      <div class="m"><img src="../banners-png/banner-mancha-mobile-800x1000.png" alt=""><img src="../banners-png/banner-tradicional-mobile-800x1000.png" alt=""><img src="../banners-png/banner-43anos-mobile-800x1000.png" alt=""><img src="../banners-png/banner-pix-mobile-800x1000.png" alt=""></div>
+    </div>
+  </section>
+
+  <section class="page" id="pendencias" style="border:0">
+    <div class="page-h"><div><p class="k">Para fechar</p><h2>O que falta da loja</h2></div></div>
+    <ul class="todo">
+      <li><span class="tbd">dado</span><div><b>Medidas reais por tamanho</b>Para a tabela de medidas de cada modelo.</div></li>
+      <li><span class="tbd">dado</span><div><b>Tecido, modelagem e história de cada peça</b>Para as descrições.</div></li>
+      <li><span class="tbd">foto</span><div><b>Fotos em alta resolução</b>As do site têm ~300 px; o ideal é 1200 px ou mais, com uma foto vestida e uma de detalhe.</div></li>
+      <li><span class="tbd">foto</span><div><b>Crédito das fotos da torcida</b>Os posts usados vêm do @manchaverdetorcida; confirmar se há fotógrafo a creditar.</div></li>
+      <li><span class="tbd">decisão</span><div><b>Desconto no Pix, frete grátis e preço de kit</b>Os valores do protótipo são sugestões.</div></li>
+      <li><span class="tbd">texto</span><div><b>História da Mancha e destino da renda da loja</b>Validar com a diretoria.</div></li>
+    </ul>
+  </section>
+</main>
+
+<script>
+// escala as telas de desktop para caber na coluna
+function fit(){document.querySelectorAll('iframe[data-scale]').forEach(f=>{const w=f.parentElement.clientWidth;f.style.transform=`scale(${w/1440})`;f.parentElement.style.height=(28+900*w/1440)+'px'})}
+addEventListener('resize',fit);fit();
+// carrinho de demonstração: abre a gaveta com um item
+document.getElementById('cartFrame').addEventListener('load',e=>{try{const w=e.target.contentWindow;w.localStorage.setItem('mancha-cart',JSON.stringify([{k:'camisa-tradicional-masculina-cordinha-ml|M',s:'camisa-tradicional-masculina-cordinha-ml',t:'M',q:1}]));w.MANCHA.openPanel('cart')}catch(err){}});
+</script>
+</body>
+</html>

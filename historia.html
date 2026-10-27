@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nossa história · Loja Mancha Alvi Verde</title>
+<meta name="description" content="Mancha Alvi Verde: Futebol, União & Samba desde 1983. Conheça a história da torcida e da loja oficial.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .h-hero{position:relative;overflow:hidden;background:var(--verde-escuro);color:#fff;padding:40px 0 46px;text-align:center}
+  .h-hero{background:var(--verde-noite) url('assets/img/torcida/historia-hero.jpg') center/cover}
+  .h-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,32,20,.55),rgba(0,32,20,.85))}
+  .h-hero .wrap{position:relative}
+  .h-hero img{width:120px;margin:0 auto 18px;background:#fff;border-radius:50%;padding:6px}
+  .h-hero h1{font:400 64px/.9 var(--display);text-transform:uppercase}
+  .h-hero h1 em{font-style:normal;color:#b7f0c9}
+  .h-hero p{max-width:46ch;margin:14px auto 0;opacity:.9;font-size:16px}
+  .pillars{display:grid;gap:12px}
+  .pillar{border-radius:18px;padding:22px;background:var(--off);position:relative;overflow:hidden}
+  .pillar b{font:400 34px/1 var(--display);text-transform:uppercase;color:var(--verde)}
+  .pillar p{margin-top:8px;color:#2b3530}
+  .pillar:nth-child(2) b{color:var(--vermelho)}
+  .tl{list-style:none;position:relative;display:grid;gap:22px;padding-left:28px}
+  .tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:var(--verde-tinta)}
+  .tl li{position:relative}
+  .tl li::before{content:"";position:absolute;left:-26px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--verde);box-shadow:0 0 0 4px #fff}
+  .tl b{font:400 26px/1 var(--display);color:var(--verde-escuro)}
+  .tl p{margin-top:4px;color:#2b3530}
+  .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+  .gallery figure{aspect-ratio:4/5;border-radius:14px;overflow:hidden;position:relative}
+  .gallery img{width:100%;height:100%;object-fit:cover}
+  .gallery figure:first-child{grid-column:1/-1;aspect-ratio:16/10}
+  .gallery figcaption{position:absolute;left:10px;bottom:8px;font-size:11px;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.6)}
+  .why{background:var(--verde);color:#fff;border-radius:20px;padding:26px 22px;display:grid;gap:14px}
+  .why h2{font:400 32px/1 var(--display);text-transform:uppercase}
+  .why ul{list-style:none;display:grid;gap:10px}
+  .why li{display:flex;gap:10px;align-items:flex-start}
+  .why li svg{flex:none;margin-top:2px;color:#b7f0c9}
+  @media(min-width:1024px){
+    .h-hero{padding:80px 0}.h-hero h1{font-size:120px}
+    .pillars{grid-template-columns:repeat(3,1fr);gap:22px}
+    .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+    .gallery{grid-template-columns:repeat(3,1fr)}.gallery figure:first-child{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+    .why{grid-template-columns:1fr 1fr;padding:50px 56px;align-items:center}.why h2{font-size:48px}
+  }
+</style>
+</head>
+<body>
+<main>
+  <section class="h-hero" data-n="1">
+    <div class="wrap">
+      <img src="assets/img/escudo.png" alt="Escudo da Mancha Alvi Verde">
+      <h1>Desde<br><em>1983</em></h1>
+      <p>Aqui se aprende a amar o Palmeiras. Futebol, União &amp; Samba desde 11 de janeiro de 1983.</p>
+    </div>
+  </section>
+
+  <section class="sec wrap" data-n="2">
+    <div class="pillars">
+      <div class="pillar"><b>Futebol</b><p>Em casa e fora, na caravana e na arquibancada. <span class="tbd">texto a validar</span></p></div>
+      <div class="pillar"><b>União</b><p>Uma família que atravessa gerações, da quadra ao estádio. <span class="tbd">texto a validar</span></p></div>
+      <div class="pillar"><b>Samba</b><p>A escola de samba e a bateria que levam o verde para a avenida. <span class="tbd">texto a validar</span></p></div>
+    </div>
+  </section>
+
+  <section class="sec sec-off" data-n="3">
+    <div class="wrap story-grid">
+      <div>
+        <p class="eyebrow">Linha do tempo</p>
+        <h2 class="h2" style="margin:8px 0 22px">A nossa história</h2>
+        <ol class="tl">
+          <li><b>1983</b><p>Fundação da Mancha Alvi Verde, em 11 de janeiro.</p></li>
+          <li><b class="tbd">Ano</b><p class="tbd">Marco da torcida (a escrever com a diretoria)</p></li>
+          <li><b class="tbd">Ano</b><p class="tbd">Marco da escola de samba</p></li>
+          <li><b>2026</b><p>43 anos e a nova loja oficial online.</p></li>
+        </ol>
+      </div>
+      <div class="gallery">
+        <figure><img src="assets/img/torcida/historia-1.jpg" alt="Bandeiras da Mancha na arquibancada"><figcaption>Foto: @manchaverdetorcida</figcaption></figure>
+        <figure><img src="assets/img/torcida/historia-2.jpg" alt="Bateria da Mancha"></figure>
+        <figure><img src="assets/img/torcida/historia-3.jpg" alt="Surdos da bateria"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec wrap" data-n="4">
+    <div class="why">
+      <h2>Comprou aqui, fortaleceu a Mancha</h2>
+      <ul>
+        <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg><span>Produto oficial, com os símbolos e a padronização da torcida.</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg><span>Envio para todo o Brasil e motoboy em São Paulo.</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg><span class="tbd">Para onde vai a renda da loja (validar com a diretoria).</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg><span>Retire também na sede: Rua Palestra Itália, 203 · São Paulo. <span class="tbd">confirmar</span></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap"><div class="sec-h"><h2 class="h2">Vista a história</h2><a class="link" href="categoria.html?c=linha-tradicional">Linha Tradicional</a></div><div class="rail" id="rail"></div></div>
+  </section>
+</main>
+<script src="assets/dados.js"></script>
+<script src="assets/site.js"></script>
+<script>
+MANCHA.init();
+document.getElementById('rail').innerHTML = MANCHA.P.filter(p=>MANCHA.isTrad(p)&&!p.esgotado).slice(0,8).map(p=>MANCHA.card(p)).join('');
+</script>
+</body>
+</html>

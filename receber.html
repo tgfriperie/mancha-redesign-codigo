@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="pt-br"><head><meta charset="utf-8"><title>Receber fotos</title></head>
+<body style="font:16px system-ui;padding:24px">
+<p id="s">Recebendo…</p>
+<script>
+// Ferramenta interna: recebe {prefixo:[urls]} no #hash e manda pro scripts/receber_urls.py baixar em fotos/
+(async()=>{
+  const dados = JSON.parse(decodeURIComponent(location.hash.slice(1)));
+  const out = [];
+  for (const [prefixo, urls] of Object.entries(dados)) {
+    const r = await fetch('http://localhost:4180/baixar', {method:'POST', headers:{'content-type':'application/json'}, body:JSON.stringify({prefixo, urls, ext: prefixo.startsWith('video') ? 'mp4' : 'jpg'})});
+    out.push(...await r.json());
+  }
+  document.getElementById('s').textContent = 'Salvas: ' + out.join(', ');
+  document.title = 'OK ' + out.length;
+})().catch(e => { document.getElementById('s').textContent = 'Erro: ' + e; document.title = 'ERRO'; });
+</script>
+</body></html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ajuda: trocas, envio e pagamento · Loja Mancha Alvi Verde</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .a-hero{background:var(--verde-tinta);padding:30px 0 26px}
+  .a-hero h1{font:400 44px/1 var(--display);text-transform:uppercase;color:var(--verde-escuro)}
+  .a-hero p{color:var(--cinza);margin-top:6px}
+  .a-search{margin-top:16px;display:flex;align-items:center;gap:10px;height:50px;border-radius:999px;background:#fff;padding:0 18px;max-width:560px}
+  .a-search input{flex:1;border:0;outline:0;background:none;font-size:15px}
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0 8px}
+  .contact a{border-radius:16px;padding:16px;background:var(--off);display:grid;gap:6px}
+  .contact a:first-child{background:var(--verde);color:#fff}
+  .contact svg{width:26px;height:26px}
+  .contact b{font-size:15px}.contact span{font-size:13px;opacity:.85}
+  .tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:18px 0 6px}
+  .faq h2{font:400 26px/1 var(--display);text-transform:uppercase;color:var(--verde-escuro);margin:28px 0 6px}
+  .faq details{border-bottom:1px solid var(--linha)}
+  .faq summary{list-style:none;cursor:pointer;padding:16px 0;font-weight:700;display:flex;justify-content:space-between;gap:12px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--verde);font-size:22px;line-height:1}
+  .faq details[open] summary::after{content:"–"}
+  .faq details p{padding:0 0 16px;color:#2b3530;font-size:14.5px}
+  .steps{display:grid;gap:10px;counter-reset:s;margin:0 0 16px}
+  .steps li{list-style:none;counter-increment:s;display:flex;gap:12px;align-items:flex-start;font-size:14.5px}
+  .steps li::before{content:counter(s);flex:none;width:28px;height:28px;border-radius:50%;background:var(--verde);color:#fff;font:700 13px/28px var(--ui);text-align:center}
+  @media(min-width:1024px){.a-hero{padding:56px 0}.a-hero h1{font-size:64px}.a-grid{display:grid;grid-template-columns:320px 1fr;gap:60px;align-items:start}.contact{grid-template-columns:1fr;position:sticky;top:140px}}
+</style>
+</head>
+<body>
+<main>
+  <section class="a-hero" data-n="1">
+    <div class="wrap">
+      <nav class="crumb"><a href="index.html">Início</a><span>/</span><span>Ajuda</span></nav>
+      <h1>Deu ruim? A gente resolve.</h1>
+      <p>Troca, entrega, pagamento e pedido: tá tudo aqui.</p>
+      <label class="a-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="fq" placeholder="Ex.: quando chega, trocar tamanho"></label>
+    </div>
+  </section>
+
+  <div class="wrap a-grid" style="padding-bottom:50px">
+    <div class="contact" data-n="2">
+      <a href="https://wa.me/5511926651983"><svg viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9c0 3 3 6 6 6l1-1.5-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2z"/></svg><b>WhatsApp</b><span>(11) 92665-1983<br><span class="tbd">horário a confirmar</span></span></a>
+      <a href="mailto:loja@manchaverde.com.br"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><b>E-mail</b><span>loja@manchaverde.com.br</span></a>
+    </div>
+
+    <div class="faq" id="faq" data-n="3">
+      <div class="tabs"><a class="chip" href="#envio">Envio</a><a class="chip" href="#trocas">Trocas</a><a class="chip" href="#pagamento">Pagamento</a><a class="chip" href="#pedidos">Pedidos</a></div>
+
+      <h2 id="envio">Envio e prazos</h2>
+      <details open><summary>Comprei. Quando sai?</summary><p>Todos os pedidos são enviados em até 2 dias úteis após a confirmação do pagamento.</p></details>
+      <details><summary>E quando chega?</summary><p>Depende da forma de envio escolhida no checkout (Correios ou motoboy). O prazo de cada opção aparece antes de você pagar, e pode ser calculado na página do produto.</p></details>
+      <details><summary>Vocês entregam por motoboy?</summary><p>Sim, em São Paulo. O prazo é de até 4 dias úteis a partir do status "Despachado".</p></details>
+      <details><summary>Como acompanho a entrega?</summary><p>Após a postagem você recebe o código de rastreamento por e-mail para acompanhar no site dos Correios.</p></details>
+
+      <h2 id="trocas">Trocas e devoluções</h2>
+      <ol class="steps">
+        <li>Chama a gente no zap em até 7 dias depois que o pedido chegar.</li>
+        <li>Manda a peça sem uso, com etiqueta e na embalagem.</li>
+        <li>Chegou aqui, a gente manda o tamanho novo ou devolve a grana.</li>
+      </ol>
+      <details><summary>A troca é grátis?</summary><p>A primeira troca é por nossa conta. <span class="tbd">Confirmar regra com a loja.</span></p></details>
+      <details><summary>Posso desistir da compra?</summary><p>Sim, em até 7 dias após o recebimento, conforme o Código de Defesa do Consumidor.</p></details>
+
+      <h2 id="pagamento">Pagamento</h2>
+      <details><summary>Quais formas de pagamento vocês aceitam?</summary><p>Pix com 5% de desconto e cartão de crédito em até 12x. <span class="tbd">Desconto no Pix é sugestão; confirmar parcelas sem juros.</span></p></details>
+      <details><summary>É seguro comprar aqui?</summary><p>Sim. O pagamento é processado em ambiente seguro e a loja não armazena os dados do seu cartão.</p></details>
+
+      <h2 id="pedidos">Pedidos</h2>
+      <details><summary>Como vejo meus pedidos?</summary><p>Entre em "Minha conta" com o e-mail usado na compra para ver o status e o rastreio.</p></details>
+      <details><summary>Posso retirar na sede?</summary><p class="tbd">Avaliar retirada na Rua Palestra Itália, 203.</p></details>
+    </div>
+  </div>
+</main>
+<script src="assets/dados.js"></script>
+<script src="assets/site.js"></script>
+<script>
+MANCHA.init();
+document.getElementById('fq').addEventListener('input',e=>{
+  const t=e.target.value.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  document.querySelectorAll('#faq details').forEach(d=>{const m=!t||d.textContent.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').includes(t);d.hidden=!m;if(t&&m)d.open=true});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Produto · Loja Mancha Alvi Verde</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .pdp{padding-bottom:10px}
+  .pdp .crumb{padding-left:16px;padding-right:16px}
+  @media(min-width:1024px){.pdp .crumb{padding-left:0;padding-right:0}}
+  /* galeria */
+  .gal{position:relative;background:var(--foto)}
+  .gal-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+  .gal-track::-webkit-scrollbar{display:none}
+  .gal-track figure{flex:0 0 100%;scroll-snap-align:center;aspect-ratio:4/5}
+  .gal-track img{width:100%;height:100%;object-fit:contain}
+  .gal-count{position:absolute;right:14px;top:14px;background:rgba(255,255,255,.92);border-radius:999px;padding:5px 10px;font:600 12px/1 var(--ui)}
+  .gal-thumbs{display:flex;gap:8px;padding:10px 16px 0;overflow-x:auto}
+  .gal-thumbs button{flex:none;width:56px;height:66px;border-radius:10px;overflow:hidden;background:var(--foto);box-shadow:inset 0 0 0 1px var(--linha);opacity:.6}
+  .gal-thumbs button.on{opacity:1;box-shadow:inset 0 0 0 2px var(--verde)}
+  .gal-thumbs img{width:100%;height:100%;object-fit:contain}
+  .gal-note{font-size:11.5px;color:var(--cinza);padding:6px 16px 0}
+  /* info */
+  .pinfo{padding:12px 16px 0}
+  .pinfo h1{font:400 30px/1.02 var(--display);text-transform:uppercase;color:var(--verde-escuro);margin:8px 0 10px}
+  .official{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--verde)}
+  .official svg{width:18px;height:18px}
+  .price{margin:18px 0 20px;padding:14px 16px;border-radius:var(--r);background:var(--verde-tinta)}
+  .price-pix{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .price-pix strong{font:800 28px/1 var(--ui);color:var(--verde-escuro);letter-spacing:-.01em}
+  .price-card{margin-top:6px;font-size:14px;color:var(--cinza)}
+  .sizes-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+  .sizes-h p{font-size:14px;color:var(--cinza)}.sizes-h b{color:var(--tinta)}
+  .sizes-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+  .sizes-grid button{height:46px;border-radius:10px;box-shadow:inset 0 0 0 1.5px var(--linha);font:700 14px/1 var(--ui);background:#fff;position:relative;overflow:hidden}
+  .sizes-grid button:hover{box-shadow:inset 0 0 0 1.5px var(--verde)}
+  .sizes-grid button.on{background:var(--verde);color:#fff;box-shadow:none}
+  .sizes-grid button.out{color:#a9b1ac;background:#fafafa}
+  .sizes-grid button.out::before{content:"";position:absolute;left:-10%;right:-10%;top:50%;height:1.5px;background:#c3c9c5;transform:rotate(-28deg)}
+  .sizes-grid button.out.on{background:#fff;color:var(--tinta);box-shadow:inset 0 0 0 2px var(--tinta)}
+  .sizes-grid.shake{animation:shake .35s}
+  @keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+  .size-err{color:var(--vermelho);font-size:13px;font-weight:600;margin-top:8px}
+  .notify{margin-top:12px;padding:12px;border-radius:12px;background:var(--off);font-size:13.5px}
+  .notify form{display:flex;gap:8px;margin-top:8px}
+  .notify input{flex:1;height:42px;border:1.5px solid var(--linha);border-radius:10px;padding:0 12px}
+  .notify form button{height:42px;padding:0 16px;border-radius:10px;background:var(--tinta);color:#fff;font-weight:700}
+  .notify .ok{color:var(--verde);font-weight:600}
+  .buy-row{display:flex;gap:10px;margin:18px 0 6px}
+  .buy-row .btn{flex:1}
+  .perks{list-style:none;display:grid;gap:12px;margin:16px 0;padding:16px 0;border-top:1px solid var(--linha);border-bottom:1px solid var(--linha)}
+  .perks li{display:flex;gap:12px;align-items:center}
+  .perks svg{color:var(--verde);width:26px;height:26px}
+  .perks b{display:block;font-size:14px}.perks span{font-size:13px;color:var(--cinza)}
+  .cep label{font-size:14px;font-weight:600}
+  .cep-row{display:flex;gap:8px;margin-top:8px}
+  .cep-res{margin-top:10px;font-size:13.5px;display:grid;gap:6px}
+  .cep-res div{display:flex;justify-content:space-between;padding:10px 12px;border-radius:10px;background:var(--off)}
+  /* kit */
+  .kit{margin:22px 16px;padding:18px 16px;border-radius:18px;border:1.5px solid var(--verde);background:linear-gradient(180deg,var(--verde-tinta),#fff 70%)}
+  .kit h2{font:400 24px/1 var(--display);text-transform:uppercase;color:var(--verde-escuro)}
+  .kit-row{display:flex;align-items:center;gap:10px;margin:14px 0}
+  .kit-item{flex:1;text-align:center}
+  .kit-item img{height:110px;width:100%;object-fit:contain;background:var(--foto);border-radius:12px;margin-bottom:8px}
+  .kit-item p{font-size:13px;font-weight:600;line-height:1.2}.kit-item span{font-size:12.5px;color:var(--cinza)}
+  .kit-plus{font:400 24px var(--display);color:var(--verde)}
+  .kit-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px dashed #b9cfc0;padding-top:12px}
+  .kit-foot s{font-size:13px;color:var(--cinza);margin-right:6px}.kit-foot strong{font:800 20px var(--ui);color:var(--verde-escuro)}
+  .kit-foot small{display:block;font-size:12px;color:var(--vermelho);font-weight:600}
+  /* acordeões */
+  .acc{border-top:1px solid var(--linha);margin:6px 0 0}
+  .acc details{border-bottom:1px solid var(--linha)}
+  .acc summary{list-style:none;cursor:pointer;padding:18px 16px;font:700 16px var(--ui);display:flex;justify-content:space-between;align-items:center}
+  .acc summary::-webkit-details-marker{display:none}
+  .acc summary::after{content:"+";font:400 24px/1 var(--ui);color:var(--verde)}
+  .acc details[open] summary::after{content:"–"}
+  .acc-b{padding:0 16px 18px;display:grid;gap:10px;font-size:14.5px;color:#2b3530}
+  .specs{display:grid;border-radius:12px;overflow:hidden;border:1px solid var(--linha);margin-top:4px}
+  .specs div{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;font-size:13.5px}
+  .specs div:nth-child(odd){background:var(--off)}
+  .specs dt{color:var(--cinza)}.specs dd{font-weight:600;text-align:right}
+  /* barra fixa */
+  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:35;display:flex;gap:12px;align-items:center;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--linha);box-shadow:0 -8px 24px rgba(0,0,0,.06);transform:translateY(110%);transition:transform .25s}
+  .sticky.on{transform:none}
+  .sticky-p{line-height:1.1}.sticky-p small{font-size:11.5px;color:var(--cinza)}.sticky-p b{display:block;font-size:18px;color:var(--verde-escuro)}
+  .sticky .btn{flex:1;height:50px}
+  .sticky .sticky-img{display:none}
+  .guide table{width:100%;border-collapse:collapse;font-size:14px;text-align:center}
+  .guide th{font:700 12px var(--cond);letter-spacing:.1em;text-transform:uppercase;color:var(--cinza);padding:8px 0;border-bottom:1.5px solid var(--linha)}
+  .guide td{padding:9px 0;border-bottom:1px solid var(--linha)}
+  .guide td:first-child{font-weight:700;color:var(--verde)}
+
+  @media(min-width:1024px){
+    .pdp-top{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;max-width:var(--wrap);margin:0 auto;padding:0 24px;align-items:start}
+    .pdp-top .crumb{grid-column:1/-1}
+    .gal{display:grid;grid-template-columns:76px 1fr;gap:14px;background:none;position:sticky;top:130px}
+    .gal-track{grid-column:2;grid-row:1;border-radius:18px;background:var(--foto)}
+    .gal-thumbs{grid-column:1;grid-row:1;flex-direction:column;padding:0}
+    .gal-thumbs button{width:76px;height:90px}
+    .gal-count{right:14px;top:14px}
+    .gal-note{grid-column:2;padding:4px 0 0}
+    .gal .tag-new{left:104px;top:14px}
+    .pinfo{padding:0}
+    .pinfo h1{font-size:46px}
+    .kit,.acc{margin-left:0;margin-right:0}
+    .pdp-right .kit{margin:26px 0}
+    .acc summary{padding:18px 0}.acc-b{padding:0 0 18px}
+    .sticky{left:50%;right:auto;bottom:18px;transform:translate(-50%,140%);width:min(760px,90vw);border-radius:999px;border:1px solid var(--linha);padding:8px 8px 8px 10px;box-shadow:0 18px 40px rgba(0,0,0,.14)}
+    .sticky.on{transform:translate(-50%,0)}
+    .sticky .sticky-img{display:block;width:44px;height:52px;object-fit:contain;background:var(--foto);border-radius:999px}
+    .sticky .sticky-n{flex:1;font-weight:700;font-size:14px;line-height:1.2}
+    .sticky .btn{flex:none}
+  }
+  .sticky-n{display:none}
+  @media(min-width:1024px){.sticky-n{display:block}}
+</style>
+</head>
+<body>
+
+<main class="pdp">
+  <div class="pdp-top">
+    <nav class="crumb wrap" data-n="1" id="crumb"></nav>
+
+    <section class="gal" data-n="2">
+      <div class="gal-track" id="gal"></div>
+      <span class="tag tag-new" id="galTag" hidden>Lançamento</span>
+      <span class="gal-count" id="galCount"></span>
+      <div class="gal-thumbs" id="thumbs"></div>
+    </section>
+
+    <div class="pdp-right">
+      <section class="pinfo">
+        <p class="eyebrow" id="eyebrow"></p>
+        <h1 id="pname"></h1>
+        <p class="official" data-n="3"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>Produto oficial da Mancha</p>
+
+        <div class="price" data-n="4">
+          <div class="price-pix"><strong id="pPix"></strong><span class="pill">no Pix · 5% OFF</span></div>
+          <p class="price-card" id="pCard"></p>
+        </div>
+
+        <div class="sizes" id="sizesBox" data-n="5">
+          <div class="sizes-h">
+            <p>Tamanho: <b id="sizeSel">escolhe aí</b></p>
+            <button class="link" id="openGuide"><svg viewBox="0 0 24 24"><path d="M3 8h18v8H3z"/><path d="M7 8v3M11 8v4M15 8v3M19 8v4"/></svg>Tabela de medidas</button>
+          </div>
+          <div class="sizes-grid" id="sizes"></div>
+          <p class="size-err" id="sizeErr" hidden>Escolhe o tamanho primeiro.</p>
+          <div class="notify" id="notify" hidden>
+            <p><b>Acabou o <span id="notifySize"></span>.</b> Deixa teu zap que a gente avisa quando voltar:</p>
+            <form onsubmit="event.preventDefault();this.innerHTML='<p class=ok>Fechou! Quando voltar, chega no teu zap.</p>'">
+              <input type="tel" placeholder="Teu WhatsApp" aria-label="WhatsApp"><button>Me avisa</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="buy-row" data-n="6"><button class="btn" id="buy">Quero essa</button></div>
+
+        <ul class="perks" data-n="7">
+          <li><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><div><b>Sai em até 2 dias úteis</b><span>Motoboy em até 4 dias úteis em SP</span></div></li>
+          <li><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-14 5.3L4 15"/><path d="M4 20v-5h5"/></svg><div><b>Não serviu? A 1ª troca é nossa</b><span>Em até 7 dias depois que chegar</span></div></li>
+          <li><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><div><b>Compra segura</b><span>Pix ou cartão em até 12x</span></div></li>
+        </ul>
+
+        <div class="cep">
+          <label for="cep">Quanto fica o frete e quando chega?</label>
+          <div class="cep-row"><input class="field" id="cep" inputmode="numeric" placeholder="00000-000" maxlength="9"><button class="btn btn-ghost" id="cepBtn">Calcular</button></div>
+          <div class="cep-res" id="cepRes"></div>
+        </div>
+      </section>
+
+      <section class="kit" id="kit" data-n="8"></section>
+
+      <section class="acc" data-n="9">
+        <details open><summary>Sobre a peça</summary><div class="acc-b" id="desc"></div></details>
+        <details id="accSize"><summary>Medidas e caimento</summary><div class="acc-b"><p>Ficou na dúvida entre dois tamanhos? Vai no maior. Ainda na dúvida, chama no zap.</p><button class="link" onclick="openGuide()">Ver tabela de medidas</button></div></details>
+        <details><summary>Entrega, troca e pagamento</summary><div class="acc-b"><p>Pagou, sai em até 2 dias úteis, pelos Correios ou motoboy (SP). Não serviu? A primeira troca é por nossa conta em até 7 dias. Pix com 5% OFF ou cartão em até 12x.</p></div></details>
+      </section>
+    </div>
+  </div>
+
+  <section class="sec" data-n="10">
+    <div class="wrap">
+      <div class="sec-h"><h2 class="h2">Completa o manto</h2></div>
+      <div class="rail" id="rel"></div>
+    </div>
+  </section>
+</main>
+
+<div class="sticky" id="sticky" data-n="11">
+  <img class="sticky-img" id="stImg" alt="">
+  <span class="sticky-n" id="stName"></span>
+  <div class="sticky-p"><small>no Pix</small><b id="stPrice"></b></div>
+  <button class="btn" id="stBuy">Quero essa</button>
+</div>
+
+<div class="sheet guide" id="guide" hidden>
+  <div class="sheet-bg" onclick="closeGuide()"></div>
+  <div class="sheet-card">
+    <div class="sheet-h"><h3>Tabela de medidas</h3><button class="ico" onclick="closeGuide()" aria-label="Fechar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+    <p style="font-size:13px;color:var(--cinza);margin:0 0 12px">Medidas em cm, com a peça na horizontal. <em class="tbd">Valores ilustrativos: substituir pelas medidas reais.</em></p>
+    <table>
+      <thead><tr><th>Tam.</th><th>Largura</th><th>Altura</th><th>Manga</th></tr></thead>
+      <tbody>
+        <tr><td>PP</td><td>48</td><td>68</td><td>60</td></tr><tr><td>P</td><td>50</td><td>70</td><td>61</td></tr>
+        <tr><td>M</td><td>53</td><td>72</td><td>62</td></tr><tr><td>G</td><td>56</td><td>74</td><td>63</td></tr>
+        <tr><td>GG</td><td>59</td><td>76</td><td>64</td></tr><tr><td>XG</td><td>62</td><td>78</td><td>65</td></tr>
+        <tr><td>G1</td><td>65</td><td>80</td><td>66</td></tr><tr><td>G2</td><td>68</td><td>82</td><td>66</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="assets/dados.js"></script>
+<script src="assets/site.js"></script>
+<script>
+const M = MANCHA;
+const slug = new URLSearchParams(location.search).get('p') || 'camisa-tradicional-masculina-cordinha-ml';
+const p = M.bySlug(slug) || M.bySlug('camisa-tradicional-masculina-cordinha-ml');
+const cat = M.CATS.find(c=>c.id===p.cat) || {id:p.cat,nome:p.cat};
+M.init(p.cat);
+document.title = p.nome + ' · Loja Mancha Alvi Verde';
+
+const ROUPA = p.tam.length>1 || (p.tam.length===1 && p.tam[0][0]!=='Único');
+const CORDINHA = p.slug==='camisa-tradicional-masculina-cordinha-ml';
+
+// cabeçalho do produto
+document.getElementById('crumb').innerHTML = `<a href="index.html">Início</a><span>/</span><a href="categoria.html?c=${cat.id}">${cat.nome}</a><span>/</span><span>${p.nome}</span>`;
+document.getElementById('eyebrow').textContent = M.isTrad(p) ? 'Linha Tradicional' : cat.nome;
+document.getElementById('pname').textContent = CORDINHA ? 'Camisa Tradicional Cordinha Manga Longa' : p.nome;
+document.getElementById('pPix').textContent = M.brl(M.pix(p.preco));
+document.getElementById('pCard').textContent = `ou ${M.brl(p.preco)} em até 12x no cartão`;
+document.getElementById('galTag').hidden = !(p.lancamento && !p.esgotado);
+
+// galeria
+const fotos = p.fotos;
+const gal = document.getElementById('gal'), th = document.getElementById('thumbs'), cnt = document.getElementById('galCount');
+gal.innerHTML = fotos.map((f,i)=>`<figure><img src="${f}" alt="${p.nome}, foto ${i+1}"></figure>`).join('');
+th.innerHTML = fotos.length>1 ? fotos.map((f,i)=>`<button class="${i?'':'on'}" aria-label="Foto ${i+1}"><img src="${f}" alt=""></button>`).join('') : '';
+cnt.textContent = `1 / ${fotos.length}`; cnt.hidden = fotos.length<2;
+gal.addEventListener('scroll',()=>{const i=Math.round(gal.scrollLeft/gal.clientWidth);cnt.textContent=`${i+1} / ${fotos.length}`;[...th.children].forEach((t,j)=>t.classList.toggle('on',i===j))});
+[...th.children].forEach((t,i)=>t.onclick=()=>gal.scrollTo({left:i*gal.clientWidth,behavior:'smooth'}));
+
+// tamanhos reais do produto (dataLayer da Tray), em ordem
+const TAM = M.sortTam(p.tam.map(([t])=>t));
+const OUT = p.tam.filter(([,ok])=>!ok).map(([t])=>t);
+let size = '';
+const box = document.getElementById('sizesBox');
+if(!ROUPA){ box.remove(); document.getElementById('accSize').remove(); }
+else{
+  const grid = document.getElementById('sizes');
+  grid.innerHTML = TAM.map(t=>`<button class="${OUT.includes(t)?'out':''}">${t}</button>`).join('');
+  grid.querySelectorAll('button').forEach(b=>b.onclick=()=>{
+    grid.querySelectorAll('button').forEach(x=>x.classList.remove('on')); b.classList.add('on');
+    document.getElementById('sizeErr').hidden = true;
+    const out = b.classList.contains('out');
+    document.getElementById('sizeSel').textContent = b.textContent + (out?' (acabou)':'');
+    document.getElementById('notify').hidden = !out; document.getElementById('notifySize').textContent = b.textContent;
+    size = out ? '' : b.textContent;
+  });
+}
+function buy(){
+  if(ROUPA && !size){
+    const g=document.getElementById('sizes'); document.getElementById('sizeErr').hidden=false;
+    g.scrollIntoView({behavior:'smooth',block:'center'}); g.classList.remove('shake'); void g.offsetWidth; g.classList.add('shake'); return;
+  }
+  M.addToCart(p.slug,size);
+}
+document.getElementById('buy').onclick = buy;
+document.getElementById('stBuy').onclick = buy;
+// produto sem estoque nenhum: no lugar do botão, o "me avisa"
+if(p.esgotado){
+  document.querySelector('.buy-row').outerHTML = `<div class="notify" style="margin:18px 0 6px"><p><b>Acabou.</b> Deixa teu zap que a gente avisa quando voltar:</p>
+    <form onsubmit="event.preventDefault();this.innerHTML='<p class=ok>Fechou! Quando voltar, chega no teu zap.</p>'"><input type="tel" placeholder="Teu WhatsApp" aria-label="WhatsApp"><button>Me avisa</button></form></div>`;
+  document.getElementById('sticky').hidden = true;
+  document.querySelector('.price .pill').textContent = 'esgotado';
+}
+
+// frete (simulado)
+document.getElementById('cep').addEventListener('input',e=>{let v=e.target.value.replace(/\D/g,'').slice(0,8);e.target.value=v.length>5?v.slice(0,5)+'-'+v.slice(5):v});
+document.getElementById('cepBtn').onclick=()=>{
+  const v=document.getElementById('cep').value.replace(/\D/g,''); if(v.length<8) return;
+  const sp = v.startsWith('0');
+  document.getElementById('cepRes').innerHTML = (sp?'<div><span><b>Motoboy</b> · até 4 dias úteis</span><b>R$ 19,90</b></div>':'')+
+    '<div><span><b>PAC</b> · 6 a 9 dias úteis</span><b>R$ 24,90</b></div><div><span><b>SEDEX</b> · 2 a 4 dias úteis</span><b>R$ 39,90</b></div><p style="font-size:12px;color:var(--cinza)">Valores simulados para o protótipo.</p>';
+};
+
+// kit
+const kitPar = M.bySlug(p.cat==='bones' ? 'camisa-tradicional-masculina-cordinha-ml' : 'bone-tradicional-cordinha');
+if(kitPar && kitPar.slug!==p.slug){
+  const total = p.preco + kitPar.preco, kitV = Math.floor(total*0.93);
+  document.getElementById('kit').innerHTML = `<h2>Fecha o kit</h2>
+    <div class="kit-row"><div class="kit-item"><img src="${p.fotos[0]}" alt=""><p>${p.nome}</p><span>${M.brl(p.preco)}</span></div><b class="kit-plus">+</b>
+    <div class="kit-item"><img src="${kitPar.fotos[0]}" alt=""><p>${kitPar.nome}</p><span>${M.brl(kitPar.preco)}</span></div></div>
+    <div class="kit-foot"><div><s>${M.brl(total)}</s><strong>${M.brl(kitV)}</strong><small>Economiza ${M.brl(total-kitV)} levando junto</small></div><button class="btn btn-sm" data-add="${kitPar.slug}">Levar os dois</button></div>`;
+} else document.getElementById('kit').remove();
+
+// descrição
+document.getElementById('desc').innerHTML = CORDINHA ? `
+  <p>A camisa da arquibancada, agora em manga longa. O padrão <b>Cordinha</b> espalha o símbolo da Mancha por toda a peça, com faixas laterais em verde e acabamento em vermelho, nas cores de quem é <b>Futebol, União &amp; Samba</b> desde 1983.</p>
+  <p>Pro jogo de inverno, pra caravana e pro dia a dia de quem não tira o verde do peito.</p>
+  <dl class="specs"><div><dt>Tecido</dt><dd class="tbd">a confirmar com a loja</dd></div><div><dt>Modelagem</dt><dd class="tbd">a confirmar com a loja</dd></div><div><dt>Gola</dt><dd>V</dd></div><div><dt>Manga</dt><dd>Longa</dd></div><div><dt>Cuidados</dt><dd>Lavar do avesso, sem alvejante</dd></div></dl>`
+  : `<p>${p.nome}, peça oficial da Mancha Alvi Verde. <span class="tbd">Descrição a escrever: história da peça, detalhes e ocasião de uso.</span></p>
+  <dl class="specs"><div><dt>Material</dt><dd class="tbd">a confirmar</dd></div><div><dt>Detalhes</dt><dd class="tbd">a confirmar</dd></div><div><dt>Cuidados</dt><dd class="tbd">a confirmar</dd></div></dl>`;
+
+// relacionados: só com estoque, priorizando a mesma categoria
+const rel = M.P.filter(x=>x.slug!==p.slug&&!x.esgotado).sort((a,b)=>(b.cat===p.cat)-(a.cat===p.cat)||(M.DESTAQUES.indexOf(a.slug)>>>0)-(M.DESTAQUES.indexOf(b.slug)>>>0)).slice(0,8);
+document.getElementById('rel').innerHTML = rel.map(x=>M.card(x)).join('');
+
+// barra fixa: aparece quando o botão principal sai da tela
+document.getElementById('stImg').src = p.fotos[0];
+document.getElementById('stName').textContent = p.nome;
+document.getElementById('stPrice').textContent = M.brl(M.pix(p.preco));
+if(!p.esgotado) new IntersectionObserver(([e])=>document.getElementById('sticky').classList.toggle('on',!e.isIntersecting&&e.boundingClientRect.top<0),{rootMargin:'-80px 0px 0px 0px'}).observe(document.getElementById('buy'));
+
+// tabela de medidas
+const guide = document.getElementById('guide');
+function openGuide(){guide.hidden=false}function closeGuide(){guide.hidden=true}
+document.getElementById('openGuide')?.addEventListener('click',openGuide);
+</script>
+</body>
+</html>

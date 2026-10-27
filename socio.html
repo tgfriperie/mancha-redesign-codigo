@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seja sócio · Mancha Alvi Verde</title>
+<meta name="description" content="Fica sócio da Mancha Alvi Verde pelo App MV. Aqui se aprende a amar o Palmeiras.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .s-hero{position:relative;overflow:hidden;color:#fff;isolation:isolate;min-height:560px;display:flex;align-items:flex-end;padding:40px 0 44px}
+  .s-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;z-index:-2}
+  .s-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,32,20,.2) 20%,rgba(0,32,20,.94))}
+  .s-hero .wrap{width:100%}
+  .s-hero .crumb{color:#bfe0cb}.s-hero .crumb :last-child{color:#fff}
+  .s-hero h1{font:400 64px/.88 var(--display);text-transform:uppercase;margin:6px 0 14px}
+  .s-hero h1 em{font-style:normal;color:#b7f0c9}
+  .s-hero p{font-size:17px;max-width:40ch;opacity:.95}
+  .s-hero .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .s-hero .bio{margin-top:16px;font-size:12.5px;opacity:.75}
+  .steps3{display:grid;gap:12px;counter-reset:s}
+  .step{counter-increment:s;background:var(--off);border-radius:18px;padding:22px 20px;position:relative}
+  .step::before{content:counter(s);font:400 64px/1 var(--display);color:var(--verde);opacity:.18;position:absolute;right:16px;top:8px}
+  .step b{font:400 26px/1 var(--display);text-transform:uppercase;color:var(--verde-escuro);display:block;margin-bottom:8px}
+  .step p{color:#2b3530;font-size:14.5px}
+  .app{display:grid;gap:22px;align-items:center;background:var(--verde-escuro);color:#fff;border-radius:22px;padding:26px 22px;position:relative;overflow:hidden}
+  .app h2{font:400 40px/.95 var(--display);text-transform:uppercase}
+  .app h2 em{font-style:normal;color:#b7f0c9}
+  .app ul{list-style:none;display:grid;gap:10px;margin:16px 0 20px}
+  .app li{display:flex;gap:10px;align-items:flex-start;font-size:15px}
+  .app li svg{flex:none;color:#b7f0c9;margin-top:1px}
+  .app .phone{justify-self:center;width:220px;aspect-ratio:9/18;border-radius:32px;border:8px solid #0b120e;background:#fff;overflow:hidden;position:relative;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+  .app .phone .scr{position:absolute;inset:0;display:flex;flex-direction:column}
+  .app .phone .top{background:var(--verde);color:#fff;padding:22px 14px 14px;text-align:center}
+  .app .phone .top img{width:58px;margin:0 auto 6px;background:#fff;border-radius:50%;padding:3px}
+  .app .phone .top b{font:400 18px/1 var(--display);text-transform:uppercase}
+  .app .phone .card-s{margin:12px;border-radius:12px;padding:12px;background:linear-gradient(135deg,#006837,#00432a);color:#fff;font-size:11px;line-height:1.4}
+  .app .phone .card-s b{font:400 16px/1 var(--display);display:block;margin-bottom:6px}
+  .app .phone .row{margin:0 12px 8px;height:34px;border-radius:9px;background:var(--off)}
+  .app .note{font-size:12px;opacity:.7;margin-top:10px}
+  .festa{position:relative;overflow:hidden;border-radius:22px;color:#fff;isolation:isolate;padding:28px 22px;min-height:300px;display:flex;flex-direction:column;justify-content:flex-end}
+  .festa>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+  .festa::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(120,8,26,.25),rgba(90,6,20,.92))}
+  .festa h2{font:400 38px/.95 var(--display);text-transform:uppercase;margin:8px 0 10px}
+  .festa p{max-width:46ch;opacity:.95;margin-bottom:16px}
+  .links{display:grid;gap:10px}
+  .lk{display:flex;gap:14px;align-items:center;padding:16px;border-radius:16px;background:#fff;box-shadow:inset 0 0 0 1.5px var(--linha);transition:box-shadow .15s}
+  .lk:hover{box-shadow:inset 0 0 0 1.5px var(--verde)}
+  .lk .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--verde-tinta);color:var(--verde);flex:none}
+  .lk b{display:block;font-size:15px}.lk span{font-size:13px;color:var(--cinza)}
+  .lk::after{content:"→";margin-left:auto;color:var(--verde);font-weight:700}
+  .gal2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+  .gal2 img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:14px}
+  @media(min-width:1024px){
+    .s-hero{min-height:680px;padding:0 0 80px}.s-hero h1{font-size:120px}
+    .s-hero::before{background:linear-gradient(90deg,rgba(0,32,20,.92) 25%,rgba(0,32,20,.2))}
+    .steps3{grid-template-columns:repeat(3,1fr);gap:22px}
+    .app{grid-template-columns:1.3fr 1fr;padding:56px}.app h2{font-size:64px}.app .phone{width:260px}
+    .two{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:stretch}
+    .festa{min-height:100%}
+  }
+</style>
+</head>
+<body>
+<main>
+  <section class="s-hero" data-n="1">
+    <img src="assets/img/torcida/socio-hero.jpg" alt="Torcida da Mancha com as faixas na arquibancada">
+    <div class="wrap">
+      <nav class="crumb"><a href="index.html">Início</a><span>/</span><span>Seja sócio</span></nav>
+      <h1>Seja sócio<br>da <em>Mancha</em></h1>
+      <p>Não é só torcer. É fazer parte. Aqui se aprende a amar o Palmeiras.</p>
+      <div class="btns">
+        <a class="btn btn-red" href="https://onelink.to/ytus9k">Quero ser sócio · App MV</a>
+        <a class="btn btn-outline-w" href="#como">Como funciona</a>
+      </div>
+      <p class="bio">O cadastro de sócio é feito no App MV, o mesmo link da bio do @manchaverdetorcida.</p>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="como" data-n="2">
+    <p class="eyebrow">Sem enrolação</p>
+    <h2 class="h2" style="margin:8px 0 20px">Como fica sócio</h2>
+    <div class="steps3">
+      <div class="step"><b>Baixa o App MV</b><p>Tem pra Android e iPhone. O link abaixo já manda pra loja certa do teu celular.</p></div>
+      <div class="step"><b>Faz o cadastro</b><p>Preenche teus dados e escolhe o plano. <span class="tbd">Confirmar planos e valores com a diretoria.</span></p></div>
+      <div class="step"><b>Tá dentro</b><p>Carteirinha e avisos de caravana direto no app. <span class="tbd">Confirmar o que o app entrega.</span></p></div>
+    </div>
+  </section>
+
+  <section class="wrap" data-n="3">
+    <div class="app">
+      <div>
+        <p class="eyebrow" style="color:#ffb3bf">App oficial</p>
+        <h2>Tudo da Mancha<br>no <em>teu celular</em></h2>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg><span>Cadastro e plano de sócio</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg><span>Caravanas e eventos na quadra <span class="tbd">confirmar</span></span></li>
+          <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg><span>Desconto de sócio na loja <span class="tbd">sugestão: ligar o app à loja</span></span></li>
+        </ul>
+        <a class="btn btn-white" href="https://onelink.to/ytus9k">Baixar o App MV</a>
+        <p class="note">Ilustração do app: não é a tela real.</p>
+      </div>
+      <div class="phone" aria-hidden="true"><div class="scr">
+        <div class="top"><img src="assets/img/escudo.png" alt=""><b>App MV</b></div>
+        <div class="card-s"><b>Sócio Mancha</b>Carteirinha digital<br>Desde 1983</div>
+        <div class="row"></div><div class="row"></div><div class="row"></div>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="sec wrap" data-n="4">
+    <div class="two">
+      <a class="festa" href="https://benfeitoria.com/projeto/palmeiras-x-ldu-alma-e-coracao-rumo-a-semi-27of">
+        <img src="assets/img/torcida/faixa-socio.jpg" alt="">
+        <p class="eyebrow" style="color:#ffd0d8">Vaquinha da torcida</p>
+        <h2>Ajuda na festa<br>das semis</h2>
+        <p>Palmeiras x LDU: alma e coração rumo à semi. Cada real vira festa na arquibancada.</p>
+        <span class="btn btn-white" style="align-self:flex-start">Colaborar na Benfeitoria</span>
+      </a>
+      <div>
+        <p class="eyebrow">Links da bio</p>
+        <h2 class="h2" style="margin:8px 0 16px">Tá tudo aqui</h2>
+        <div class="links">
+          <a class="lk" href="https://onelink.to/ytus9k"><span class="ic"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span><div><b>Fique sócio · App MV</b><span>onelink.to/ytus9k</span></div></a>
+          <a class="lk" href="https://benfeitoria.com/projeto/palmeiras-x-ldu-alma-e-coracao-rumo-a-semi-27of"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg></span><div><b>Festa das semis</b><span>benfeitoria.com</span></div></a>
+          <a class="lk" href="index.html"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 7h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 7V6a3 3 0 0 1 6 0v1"/></svg></span><div><b>Loja online</b><span>lojamanchaalviverde.com.br</span></div></a>
+          <a class="lk" href="https://www.instagram.com/manchaverdetorcida/"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></span><div><b>Instagram</b><span>@manchaverdetorcida · 1 mi de seguidores</span></div></a>
+          <a class="lk" href="#"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span><div><b>Loja física</b><span>Rua Palestra Itália, 203 · SP <span class="tbd">confirmar endereço e horário</span></span></div></a>
+        </div>
+        <p style="font-size:12px;color:var(--cinza);margin-top:10px">A vaquinha é campanha do momento: sai do ar quando a festa passar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-off" data-n="5">
+    <div class="wrap">
+      <div class="sec-h"><div><p class="eyebrow">Sócio que é sócio</p><h2 class="h2">Vai de manto</h2></div><a class="link" href="categoria.html?c=linha-tradicional">Ver a Linha Tradicional</a></div>
+      <div class="rail" id="rail"></div>
+      <div class="gal2"><img src="assets/img/torcida/socio-1.jpg" alt="Torcedores da Mancha com a faixa"><img src="assets/img/torcida/socio-2.jpg" alt="Torcedores da Mancha no alambrado"></div>
+    </div>
+  </section>
+</main>
+<script src="assets/dados.js"></script>
+<script src="assets/site.js"></script>
+<script>
+MANCHA.init('socio');
+document.getElementById('rail').innerHTML = MANCHA.P.filter(p=>MANCHA.isTrad(p)&&!p.esgotado).slice(0,8).map(p=>MANCHA.card(p)).join('');
+</script>
+</body>
+</html>

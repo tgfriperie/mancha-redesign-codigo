@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Página não encontrada · Loja Mancha Alvi Verde</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .nf{text-align:center;padding:50px 0 30px}
+  .nf img{height:170px;margin:0 auto 18px}
+  .nf .code{font:400 90px/.9 var(--display);color:var(--verde-tinta);-webkit-text-stroke:2px var(--verde)}
+  .nf h1{font:400 34px/1 var(--display);text-transform:uppercase;color:var(--verde-escuro);margin:10px 0}
+  .nf p{color:var(--cinza);max-width:40ch;margin:0 auto 20px}
+  .nf .btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<main>
+  <section class="nf wrap" data-n="1">
+    <img src="assets/img/mascote.png" alt="">
+    <p class="code">404</p>
+    <h1>Essa página foi pra caravana</h1>
+    <p>Esse endereço mudou ou não existe mais. Bora voltar pra arquibancada?</p>
+    <div class="btns"><a class="btn" href="index.html">Ir para o início</a><button class="btn btn-ghost" data-open="search">Buscar produto</button></div>
+  </section>
+  <section class="sec" style="padding-top:10px"><div class="wrap"><div class="sec-h"><h2 class="h2">Mais vendidos</h2></div><div class="rail" id="rail"></div></div></section>
+</main>
+<script src="assets/dados.js"></script>
+<script src="assets/site.js"></script>
+<script>
+MANCHA.init();
+document.getElementById('rail').innerHTML = MANCHA.DESTAQUES.map(MANCHA.bySlug).filter(p=>!p.esgotado).slice(0,8).map(p=>MANCHA.card(p)).join('');
+</script>
+</body>
+</html>

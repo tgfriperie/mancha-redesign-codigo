@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banner · exportação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  /* uma peça por tela, no tamanho exato da janela: usado por scripts/exportar_banners.sh */
+  html,body{height:100%;overflow:hidden}
+  .hero,.hero-track,.hero .bn{height:100vh;min-height:0}
+  .hero .bn{flex-basis:100vw}
+  .hero .bn-mascot{opacity:.07}
+</style>
+</head>
+<body>
+<section class="hero"><div class="hero-track" id="t"></div></section>
+<script src="assets/banners.js"></script>
+<script>
+const id = new URLSearchParams(location.search).get('b') || BANNERS[0].id;
+document.getElementById('t').innerHTML = renderBanner(BANNERS.find(b=>b.id===id));
+</script>
+</body>
+</html>
