@@ -251,12 +251,6 @@ body.pins .sticky[data-n]::after{top:-10px}
 }
 
 /* categorias */
-.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.cat{position:relative;aspect-ratio:1;border-radius:16px;overflow:hidden;background:var(--foto);display:flex;align-items:flex-end;padding:10px}
-.cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8% 8% 26%;transition:transform .3s}
-.cat:hover img{transform:scale(1.05)}
-.cat span{position:relative;font:400 17px/1 var(--display);text-transform:uppercase;color:var(--verde-escuro)}
-@media(min-width:1024px){.cats{grid-template-columns:repeat(6,1fr);gap:18px}.cat span{font-size:22px}.cat{padding:16px}}
 
 /* duplo */
 .duo{display:grid;gap:12px}

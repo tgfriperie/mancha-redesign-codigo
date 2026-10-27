@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="assets/site.css">
 <style>
   .hero .bn-mascot{opacity:.07}
-  .home-cats{padding-top:30px}
   .rail-h{display:flex;gap:8px;margin-bottom:16px;overflow-x:auto;scrollbar-width:none}
   .trad{display:grid;gap:18px}
   .trad-feat{position:relative;border-radius:20px;overflow:hidden;background:var(--foto);aspect-ratio:4/5}
@@ -44,22 +43,16 @@
   <!-- 2 · Garantias -->
   <ul class="perks-strip" data-n="2" id="perks"></ul>
 
-  <!-- 3 · Categorias -->
-  <section class="wrap home-cats" data-n="3">
-    <div class="sec-h"><h2 class="h2">Escolha por categoria</h2><a class="link" href="categoria.html?c=todas">Todas as categorias</a></div>
-    <div class="cats" id="cats"></div>
-  </section>
-
-  <!-- 4 · Mais vendidos -->
-  <section class="sec" data-n="4">
+  <!-- 3 · Mais vendidos -->
+  <section class="sec" data-n="3">
     <div class="wrap">
       <div class="sec-h"><div><p class="eyebrow">Só o que tem no estoque</p><h2 class="h2">O que mais sai</h2></div><a class="link" href="categoria.html?c=linha-tradicional">Ver tudo</a></div>
       <div class="rail" id="best"></div>
     </div>
   </section>
 
-  <!-- 5 · Banners duplos -->
-  <section class="wrap" data-n="5">
+  <!-- 4 · Banners duplos -->
+  <section class="wrap" data-n="4">
     <div class="duo">
       <a class="bn bn-has-photo" href="categoria.html?c=feminino">
         <div class="bn-photo" style="background-image:url('assets/img/torcida/duo-feminino.jpg');background-position:20% 40%"></div>
@@ -73,8 +66,8 @@
     </div>
   </section>
 
-  <!-- 5b · Mini banners com foto -->
-  <section class="wrap" style="margin-top:34px" data-n="5b">
+  <!-- 4b · Mini banners com foto -->
+  <section class="wrap" style="margin-top:34px" data-n="4b">
     <div class="sec-h"><div><p class="eyebrow">Fotos da arquibancada</p><h2 class="h2">Veste igual quem tá lá</h2></div></div>
     <div class="minis">
       <a class="mini" href="categoria.html?c=masculino&s=camisas"><img src="assets/img/torcida/mini-bateria.jpg" alt="Surdo da bateria da Mancha"><b>Igual a bateria</b><span>As camisas que a arquibancada veste.</span><i>Ver camisas</i></a>
@@ -84,8 +77,8 @@
     </div>
   </section>
 
-  <!-- 6 · Linha Tradicional -->
-  <section class="sec" data-n="6">
+  <!-- 5 · Linha Tradicional -->
+  <section class="sec" data-n="5">
     <div class="wrap">
       <div class="sec-h"><div><p class="eyebrow">O carro-chefe</p><h2 class="h2">Linha Tradicional</h2></div><a class="link" href="categoria.html?c=linha-tradicional">Ver a linha toda</a></div>
       <div class="trad">
@@ -99,8 +92,8 @@
     </div>
   </section>
 
-  <!-- 7 · História -->
-  <section class="sec story" data-n="7">
+  <!-- 6 · História -->
+  <section class="sec story" data-n="6">
     <div class="story-photo" style="background-image:url('assets/img/torcida/story.jpg')"></div>
     <img class="story-mascot" src="assets/img/mascote-branco.png" alt="">
     <div class="wrap">
@@ -118,8 +111,8 @@
     </div>
   </section>
 
-  <!-- 7b · Faixa sócio -->
-  <section class="faixa" data-n="7b">
+  <!-- 6b · Faixa sócio -->
+  <section class="faixa" data-n="6b">
     <img src="assets/img/torcida/faixa-socio.jpg" alt="Corredor Alviverde com sinalizadores verdes">
     <div class="wrap">
       <p class="eyebrow">Corredor Alviverde</p>
@@ -129,16 +122,16 @@
     </div>
   </section>
 
-  <!-- 8 · Instagram -->
-  <section class="sec" data-n="8">
+  <!-- 7 · Instagram -->
+  <section class="sec" data-n="7">
     <div class="wrap">
       <div class="insta-h"><img src="assets/img/escudo.png" alt=""><div><b>@manchaverdetorcida</b><span>Marca a gente vestindo o manto</span></div><a class="btn btn-ghost btn-sm" style="margin-left:auto" href="https://www.instagram.com/manchaverdetorcida/">Seguir</a></div>
       <div class="insta" id="insta"></div>
     </div>
   </section>
 
-  <!-- 9 · Clube -->
-  <section class="wrap" style="padding-bottom:40px" data-n="9">
+  <!-- 8 · Clube -->
+  <section class="wrap" style="padding-bottom:40px" data-n="8">
     <div class="club">
       <img src="assets/img/mascote-branco.png" alt="">
       <div><h2>Lançamento sai primeiro pra quem é da Mancha</h2><p>Deixa teu zap e recebe a pré-venda das coleções novas antes de todo mundo.</p></div>
@@ -175,11 +168,6 @@ document.getElementById('perks').innerHTML = [
   [M.ICON.swap,'1ª troca é por nossa conta','em até 7 dias'],
   [M.ICON.lock,'Compra segura','cartão em até 12x'],
 ].map(([i,b,s])=>`<li>${i}<div><b>${b}</b>${s}</div></li>`).join('');
-
-// categorias
-const capa = {'linha-tradicional':'camisa-tradicional-masculina-cordinha-ml',masculino:'jaqueta-bordada-desde-1983',feminino:'regata-feminina-mancha-alvi-verde',infantil:'camisa-infantil-sep-palestra-italia',bones:'bone-43-anos',acessorios:'corrente-tradicional'};
-document.getElementById('cats').innerHTML = M.CATS.filter(c=>capa[c.id]).map(c=>`
-  <a class="cat" href="categoria.html?c=${c.id}"><img src="${M.bySlug(capa[c.id]).fotos[0]}" alt=""><span>${c.nome}</span></a>`).join('');
 
 // mais vendidos (curadoria: sem dado de venda no protótipo)
 document.getElementById('best').innerHTML = M.DESTAQUES.map(M.bySlug).filter(p=>!p.esgotado).slice(0,8)
